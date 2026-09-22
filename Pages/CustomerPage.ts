@@ -94,7 +94,7 @@ export class CustomerPage{
       await expect(supplierrow).toBeVisible()
       console.log(`supplier number found in table:${this.cusNumber}`)
        await expect(supplierrow).toContainText(this.cusNumber)
-     
+     //import the data 
     
      }
 }

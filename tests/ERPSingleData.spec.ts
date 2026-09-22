@@ -38,6 +38,8 @@ test('customer module', async ({ page }) => {
     )
     await cus.HandleAlerts()
     await cus.customerTable()
+
+    //Test the file in git hub 
 })
 
 })
