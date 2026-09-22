@@ -1,0 +1,133 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ERPSingleData.spec.ts >> ERP Inventory Manage >> suplier with single data
+- Location: tests\ERPSingleData.spec.ts:7:9
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.waitFor: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('Suppliers') to be visible
+
+```
+
+# Test source
+
+```ts
+  1   | import { expect, Locator, Page } from "@playwright/test";
+  2   | import { waitForDebugger } from "node:inspector";
+  3   | import { runInThisContext } from "node:vm";
+  4   | 
+  5   | export class SuppliersPage{
+  6   | page:Page
+  7   | readonly ClickSuppliersLink:Locator
+  8   | readonly ClickAddIcon:Locator
+  9   | readonly SupplierNumber:Locator
+  10  | readonly SupplierName:Locator 
+  11  | readonly Supplieraddress:Locator
+  12  | readonly SupplierCity:Locator
+  13  | readonly SupplierCountry:Locator
+  14  | readonly SupplierContactPerson:Locator
+  15  | readonly SupplierPhoneNumber:Locator
+  16  | readonly SupplierEmail:Locator
+  17  | readonly SupplierMobileNumber:Locator
+  18  | readonly SupplierNotes:Locator
+  19  | readonly ClickAdddButton:Locator
+  20  | readonly ConformOk:Locator
+  21  | readonly AlertOk:Locator
+  22  | readonly SerchPanel:Locator
+  23  | readonly SearchTextBox:Locator
+  24  | readonly SerchButton:Locator
+  25  | //read only
+  26  | private expNumber!:string
+  27  | constructor(page:Page)
+  28  | {
+  29  |     this.page=page
+  30  |     this.ClickSuppliersLink=page.locator('Suppliers')
+  31  |     this.ClickAddIcon=page.locator('[data-phrase="AddLink"]').first()
+  32  |     this.SupplierNumber=page.getByLabel('Supplier Number')
+  33  |     this.SupplierName=page.getByPlaceholder('Supplier Name')
+  34  |     this.Supplieraddress=page.getByPlaceholder('Address')
+  35  |     this.SupplierCity=page.getByPlaceholder('City')
+  36  |     this.SupplierCountry=page.getByPlaceholder('Country')
+  37  |     this.SupplierContactPerson=page.getByPlaceholder('Contact Person')
+  38  |     this.SupplierPhoneNumber=page.getByPlaceholder('Phone Number')
+  39  |     this.SupplierEmail=page.getByPlaceholder('Email')
+  40  |     this.SupplierMobileNumber=page.getByPlaceholder('Mobile Number')
+  41  |     this.SupplierNotes=page.getByPlaceholder('Notes')
+  42  |     this.ClickAdddButton=page.locator('btnAction')
+  43  |     this.ConformOk=page.getByText('OK!')
+  44  |     this.AlertOk=page.getByText('OK')
+  45  |     this.SerchPanel=page.locator('[data-original-title="Search Panel"]')
+  46  |     this.SearchTextBox=page.getByPlaceholder('Search')
+  47  |     this.SerchButton=page.locator('#btnsubmit')
+  48  | }
+  49  | //Method for navigate to supplier and page
+  50  | async NavigateToSupliers()
+  51  |  {
+> 52  |    await this.ClickSuppliersLink.waitFor()
+      |                                  ^ Error: locator.waitFor: Test timeout of 30000ms exceeded.
+  53  |    await this.ClickSuppliersLink.click()
+  54  |    await this.ClickAdddButton.click()
+  55  |  }
+  56  | 
+  57  |  async AddSupplierDetails(sname :string,address:string,city:string,country:string,cperson:string,
+  58  |   pnumber:string,email:string,mnumber:string,notes:string)
+  59  |   {
+  60  |     await this.SupplierNumber.waitFor()
+  61  |     this.expNumber=await this.SupplierNumber.inputValue();
+  62  |     await this.SupplierName.fill(sname)
+  63  |     await this.Supplieraddress.fill(address)
+  64  |     await this.SupplierCity.fill(city)
+  65  |     await this.SupplierCountry.fill(country)
+  66  |     await this.SupplierContactPerson.fill(cperson)
+  67  |     await this.SupplierPhoneNumber.fill(pnumber)
+  68  |     await this.SupplierEmail.fill(email)
+  69  |     await this.SupplierMobileNumber.fill(mnumber)
+  70  |     await this.SupplierNotes.fill(notes)
+  71  |     await this.ClickAdddButton.click()
+  72  |  }
+  73  | 
+  74  |  async HandleAlerts(){
+  75  | 
+  76  |   await this.ConformOk.waitFor()
+  77  |   await this.ConformOk.click()
+  78  |   await this.AlertOk.waitFor()
+  79  |   await this.AlertOk.click()
+  80  | 
+  81  |  }
+  82  |  async supplierTable(){
+  83  | 
+  84  |   if (!await this.SerchButton.isVisible()){
+  85  |     await this .SerchButton.click()
+  86  |   }
+  87  | 
+  88  |   await this.SearchTextBox.clear()
+  89  |   await this.SearchTextBox.fill(this.expNumber)
+  90  |   await this.SerchButton.click()
+  91  |  const supplierrow=this.page.locator('el1_a_suppliers_Supplier_Number',
+  92  |   {
+  93  |     hasText:this.expNumber
+  94  |   })
+  95  |   await expect(supplierrow).toBeVisible()
+  96  |   console.log(`supplier number found in table:${this.expNumber}`)
+  97  |    await expect(supplierrow).toContainText(this.expNumber)
+  98  |  
+  99  | 
+  100 |  }
+  101 | 
+  102 |  
+  103 | } 
+  104 | 
+```

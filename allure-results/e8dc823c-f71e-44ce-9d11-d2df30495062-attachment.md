@@ -1,0 +1,322 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ERPSingleData.spec.ts >> ERP Inventory Manage >> customer module
+- Location: tests\ERPSingleData.spec.ts:25:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.waitFor: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByLabel('Customer Number') to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "Stock Accounting" [ref=f1e6] [cursor=pointer]:
+        - /url: .
+      - strong [ref=f1e9]: Stock Accounting
+      - generic [ref=f1e12]:
+        - text: "User Name:"
+        - strong [ref=f1e13]: Administrator
+        - text: "|"
+        - link "Logout" [active] [ref=f1e14] [cursor=pointer]:
+          - /url: javascript:void(0);
+    - text:                             
+    - generic [ref=f1e17]:
+      - list [ref=f1e18]:
+        - listitem [ref=f1e19]:
+          - link "Dashboard" [ref=f1e20] [cursor=pointer]:
+            - /url: dashboard.php
+        - listitem [ref=f1e21]:
+          - link "Stock Items" [ref=f1e22] [cursor=pointer]:
+            - /url: a_stock_itemslist.php?cmd=resetall
+        - listitem [ref=f1e24]:
+          - link "Suppliers" [ref=f1e25] [cursor=pointer]:
+            - /url: a_supplierslist.php
+        - listitem [ref=f1e26]:
+          - link "Purchases" [ref=f1e27] [cursor=pointer]:
+            - /url: a_purchaseslist.php?cmd=resetall
+        - listitem [ref=f1e28]:
+          - link "Customers" [ref=f1e29] [cursor=pointer]:
+            - /url: a_customerslist.php
+        - listitem [ref=f1e30]:
+          - link "Sales" [ref=f1e31] [cursor=pointer]:
+            - /url: a_saleslist.php?cmd=resetall
+        - listitem [ref=f1e32]:
+          - link "Outstandings" [ref=f1e33] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f1e35]:
+          - link "Administrator" [ref=f1e36] [cursor=pointer]:
+            - /url: "#"
+        - listitem [ref=f1e38]:
+          - link " Help (Categories)" [ref=f1e39] [cursor=pointer]:
+            - /url: help_categorieslist.php
+            - generic [ref=f1e40]: 
+            - text: Help (Categories)
+          - text:   
+        - listitem [ref=f1e42]:
+          - link " Settings" [ref=f1e43] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=f1e44]: 
+            - text: Settings
+          - text:          
+        - listitem [ref=f1e46]:
+          - link " Logout" [ref=f1e47] [cursor=pointer]:
+            - /url: logout.php
+            - generic [ref=f1e48]: 
+            - text: Logout
+      - list
+    - generic [ref=f1e51]:
+      - generic [ref=f1e52]:
+        - list [ref=f1e53]:
+          - listitem [ref=f1e54]:
+            - link "" [ref=f1e55] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=f1e57]: / Dashboard
+          - link "" [ref=f1e58] [cursor=pointer]:
+            - /url: javascript:void(0);
+        - generic [ref=f1e61]:
+          - generic [ref=f1e62] [cursor=pointer]:
+            - radio "en" [checked]
+            - text: en
+          - generic [ref=f1e63] [cursor=pointer]:
+            - radio "id"
+            - text: id
+      - generic [ref=f1e65]:
+        - generic [ref=f1e67]:
+          - strong [ref=f1e69]: Purchases
+          - table [ref=f1e71]:
+            - rowgroup [ref=f1e72]:
+              - row [ref=f1e73]:
+                - rowheader "Total Amount" [ref=f1e74]
+                - cell "500,532,211.00" [ref=f1e75]
+              - row [ref=f1e76]:
+                - rowheader "Total Payment" [ref=f1e77]
+                - cell "471,314,460.00" [ref=f1e78]
+              - row [ref=f1e79]:
+                - rowheader "Total Balance" [ref=f1e80]
+                - cell "29,091,751.00" [ref=f1e81]
+        - generic [ref=f1e83]:
+          - strong [ref=f1e85]: Sales
+          - table [ref=f1e87]:
+            - rowgroup [ref=f1e88]:
+              - row [ref=f1e89]:
+                - rowheader "Total Amount" [ref=f1e90]
+                - cell "6,696,300.00" [ref=f1e91]
+              - row [ref=f1e92]:
+                - rowheader "Discount Amount" [ref=f1e93]
+                - cell "326,440.00" [ref=f1e94]
+              - row [ref=f1e95]:
+                - rowheader "Tax Amount" [ref=f1e96]
+                - cell "617,650.00" [ref=f1e97]
+              - row [ref=f1e98]:
+                - rowheader "Total Payment" [ref=f1e99]
+                - cell "4,385,631.00" [ref=f1e100]
+              - row [ref=f1e101]:
+                - rowheader "Total Balance" [ref=f1e102]
+                - cell "2,602,879.00" [ref=f1e103]
+        - generic [ref=f1e105]:
+          - strong [ref=f1e107]: Purchases Outstandings
+          - table [ref=f1e109]:
+            - rowgroup [ref=f1e110]:
+              - row [ref=f1e111]:
+                - columnheader "Supplier Name" [ref=f1e112]
+                - columnheader "Balance" [ref=f1e113]
+            - rowgroup [ref=f1e114]:
+              - row [ref=f1e115]:
+                - cell "First Supplier" [ref=f1e116]
+                - cell "16,040,000.00" [ref=f1e117]
+              - row [ref=f1e118]:
+                - cell "Second Supplier" [ref=f1e119]
+                - cell "7,750,000.00" [ref=f1e120]
+              - row [ref=f1e121]:
+                - cell "Third Supplier" [ref=f1e122]
+                - cell "3,600,000.00" [ref=f1e123]
+              - row [ref=f1e124]:
+                - cell "Fourth Supplier" [ref=f1e125]
+                - cell "1,700,000.00" [ref=f1e126]
+        - generic [ref=f1e128]:
+          - strong [ref=f1e130]: Sales Outstandings
+          - table [ref=f1e132]:
+            - rowgroup [ref=f1e133]:
+              - row [ref=f1e134]:
+                - columnheader "Customer Name" [ref=f1e135]
+                - columnheader "Balance" [ref=f1e136]
+            - rowgroup [ref=f1e137]:
+              - row [ref=f1e138]:
+                - cell "First Customer" [ref=f1e139]
+                - cell "720,000.00" [ref=f1e140]
+              - row [ref=f1e141]:
+                - cell "Second Customer" [ref=f1e142]
+                - cell "150,000.00" [ref=f1e143]
+              - row [ref=f1e144]:
+                - cell "Third Customer" [ref=f1e145]
+                - cell "280,000.00" [ref=f1e146]
+              - row [ref=f1e147]:
+                - cell "Fourth Customer" [ref=f1e148]
+                - cell "900,000.00" [ref=f1e149]
+              - row [ref=f1e150]:
+                - cell "Test123" [ref=f1e151]
+                - cell "109,000.00" [ref=f1e152]
+              - row [ref=f1e153]:
+                - cell "Test123" [ref=f1e154]
+                - cell "2,200.00" [ref=f1e155]
+              - row [ref=f1e156]:
+                - cell "Test123" [ref=f1e157]
+                - cell "108,890.00" [ref=f1e158]
+              - row [ref=f1e159]:
+                - cell "Hari" [ref=f1e160]
+                - cell "113,889.00" [ref=f1e161]
+              - row [ref=f1e162]:
+                - cell "Hari" [ref=f1e163]
+                - cell "109,900.00" [ref=f1e164]
+              - row [ref=f1e165]:
+                - cell "Seela Manvi" [ref=f1e166]
+                - cell "109,000.00" [ref=f1e167]
+    - generic [ref=f1e169]:
+      - text: ©2015
+      - link "Masino Sinaga" [ref=f1e170] [cursor=pointer]:
+        - /url: http://www.ilovephpmaker.com
+      - text: . All rights reserved. |
+      - link "Terms and Conditions" [ref=f1e171] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - text: "|"
+      - link "About Us" [ref=f1e172] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - text: "|"
+      - link "Back to Top" [ref=f1e173] [cursor=pointer]:
+        - /url: javascript:void(0);
+      - generic [ref=f1e174]: Your session will expire in 155 seconds.
+  - generic [ref=f1e175]:
+    - button [ref=f1e176] [cursor=pointer]
+    - generic [ref=f1e177]:
+      - button [ref=f1e178] [cursor=pointer]
+      - button [ref=f1e179] [cursor=pointer]
+    - generic [ref=f1e180]: Logout
+    - generic [ref=f1e181]: Are you sure you want to logout?
+    - generic [ref=f1e185]:
+      - button "OK!" [ref=f1e186] [cursor=pointer]
+      - button "Cancel" [ref=f1e187] [cursor=pointer]
+    - button [ref=f1e188] [cursor=pointer]
+```
+
+# Test source
+
+```ts
+  1  | import { expect, Locator, Page } from "@playwright/test"
+  2  | 
+  3  | export class CustomerPage{
+  4  |     page:Page
+  5  |     readonly ClickCustomerLink:Locator
+  6  |     readonly ClickAddIcon:Locator
+  7  |     readonly CustomerNumber:Locator
+  8  |     readonly CustomerName:Locator 
+  9  |     readonly Customeraddress:Locator
+  10 |     readonly CustomerCity:Locator
+  11 |     readonly CustomerCountry:Locator
+  12 |     readonly CustomerContactPerson:Locator
+  13 |     readonly CustomerPhoneNumber:Locator
+  14 |     readonly CustomerEmail:Locator
+  15 |     readonly CustomerMobileNumber:Locator
+  16 |     readonly CustomerNotes:Locator
+  17 |     readonly ClickAdddButton:Locator
+  18 |     readonly ConformOk:Locator
+  19 |     readonly AlertOk:Locator
+  20 |     readonly SerchPanel:Locator
+  21 |     readonly SearchTextBox:Locator
+  22 |     readonly SerchButton:Locator
+  23 |     //read only
+  24 |     private cusNumber!:string
+  25 |     constructor(page:Page)
+  26 |     {
+  27 |         this.page=page
+  28 |         this.ClickCustomerLink=page.locator('#mi_a_customers')
+  29 |         this.ClickAddIcon=page.locator('[data-caption="Add"]').first()
+  30 |         this.CustomerNumber=page.getByLabel('Customer Number')
+  31 |         this.CustomerName=page.getByPlaceholder('Customer Name')
+  32 |         this.Customeraddress=page.getByPlaceholder('Address')
+  33 |         this.CustomerCity=page.getByPlaceholder('City')
+  34 |         this.CustomerCountry=page.getByPlaceholder('Country')
+  35 |         this.CustomerContactPerson=page.getByPlaceholder('Contact Person')
+  36 |         this.CustomerPhoneNumber=page.getByPlaceholder('Phone Number')
+  37 |         this.CustomerEmail=page.getByPlaceholder('Email')
+  38 |         this.CustomerMobileNumber=page.getByPlaceholder('Mobile Number')
+  39 |         this.CustomerNotes=page.getByPlaceholder('Notes')
+  40 |         this.ClickAdddButton=page.locator('btnAction')
+  41 |         this.ConformOk=page.getByText('OK!')
+  42 |         this.AlertOk=page.getByText('OK')
+  43 |         this.SerchPanel=page.locator('[data-phrase="SearchBtn"]')
+  44 |         this.SearchTextBox=page.getByPlaceholder('Search')
+  45 |         this.SerchButton=page.locator('#btnsubmit')
+  46 |     }
+  47 |     //Method for navigate to supplier and page
+  48 |     async NavigateToCustomer()
+  49 |      {
+  50 |        await this.ClickCustomerLink.waitFor()
+  51 |        await this.ClickCustomerLink.click()
+  52 |        await this.ClickAdddButton.click()
+  53 |      }
+  54 |     
+  55 |      async CustomerDetails(sname :string,address:string,city:string,country:string,cperson:string,
+  56 |       pnumber:string,email:string,mnumber:string,notes:string)
+  57 |       {
+> 58 |         await this.CustomerNumber.waitFor()
+     |                                   ^ Error: locator.waitFor: Test timeout of 30000ms exceeded.
+  59 |         this.cusNumber=await this.CustomerNumber.inputValue();
+  60 |         await this.CustomerName.fill(sname)
+  61 |         await this.Customeraddress.fill(address)
+  62 |         await this.CustomerCity.fill(city)
+  63 |         await this.CustomerCountry.fill(country)
+  64 |         await this.CustomerContactPerson.fill(cperson)
+  65 |         await this.CustomerPhoneNumber.fill(pnumber)
+  66 |         await this.CustomerEmail.fill(email)
+  67 |         await this.CustomerMobileNumber.fill(mnumber)
+  68 |         await this.CustomerNotes.fill(notes)
+  69 |         await this.ClickAdddButton.click()
+  70 |      }
+  71 |     
+  72 |      async HandleAlerts(){
+  73 |     
+  74 |       await this.ConformOk.waitFor()
+  75 |       await this.ConformOk.click()
+  76 |       await this.AlertOk.waitFor()
+  77 |       await this.AlertOk.click()
+  78 |     
+  79 |      }
+  80 |      async customerTable(){
+  81 |     
+  82 |       if (!await this.SerchButton.isVisible()){
+  83 |         await this .SerchButton.click()
+  84 |       }
+  85 |     
+  86 |       await this.SearchTextBox.clear()
+  87 |       await this.SearchTextBox.fill(this.cusNumber)
+  88 |       await this.SerchButton.click()
+  89 |      const supplierrow=this.page.locator('el1_a_customers_Customer_Number',
+  90 |       {
+  91 |         hasText:this.cusNumber
+  92 |       })
+  93 |       await expect(supplierrow).toBeVisible()
+  94 |       console.log(`supplier number found in table:${this.cusNumber}`)
+  95 |        await expect(supplierrow).toContainText(this.cusNumber)
+  96 |      
+  97 |     
+  98 |      }
+  99 | }
+```

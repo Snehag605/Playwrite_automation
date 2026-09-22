@@ -1,0 +1,629 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ERPSingleData.spec.ts >> ERP Inventory Manage >> suplier with single data
+- Location: tests\ERPSingleData.spec.ts:6:9
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Test timeout of 30000ms exceeded while running "afterEach" hook.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=f2e2]:
+  - generic [ref=f2e3]:
+    - link "Stock Accounting" [ref=f2e6] [cursor=pointer]:
+      - /url: .
+    - strong [ref=f2e9]: Stock Accounting
+    - generic [ref=f2e12]:
+      - text: "User Name:"
+      - strong [ref=f2e13]: Administrator
+      - text: "|"
+      - link "Logout" [ref=f2e14] [cursor=pointer]:
+        - /url: javascript:void(0);
+  - text:                             
+  - generic [ref=f2e17]:
+    - list [ref=f2e18]:
+      - listitem [ref=f2e19]:
+        - link "Dashboard" [ref=f2e20] [cursor=pointer]:
+          - /url: dashboard.php
+      - listitem [ref=f2e21]:
+        - link "Stock Items" [ref=f2e22] [cursor=pointer]:
+          - /url: a_stock_itemslist.php?cmd=resetall
+      - listitem [ref=f2e24]:
+        - link "Suppliers" [ref=f2e25] [cursor=pointer]:
+          - /url: a_supplierslist.php
+      - listitem [ref=f2e26]:
+        - link "Purchases" [ref=f2e27] [cursor=pointer]:
+          - /url: a_purchaseslist.php?cmd=resetall
+      - listitem [ref=f2e28]:
+        - link "Customers" [ref=f2e29] [cursor=pointer]:
+          - /url: a_customerslist.php
+      - listitem [ref=f2e30]:
+        - link "Sales" [ref=f2e31] [cursor=pointer]:
+          - /url: a_saleslist.php?cmd=resetall
+      - listitem [ref=f2e32]:
+        - link "Outstandings" [ref=f2e33] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f2e35]:
+        - link "Administrator" [ref=f2e36] [cursor=pointer]:
+          - /url: "#"
+      - listitem [ref=f2e38]:
+        - link " Help (Categories)" [ref=f2e39] [cursor=pointer]:
+          - /url: help_categorieslist.php
+          - generic [ref=f2e40]: 
+          - text: Help (Categories)
+        - text:   
+      - listitem [ref=f2e42]:
+        - link " Settings" [ref=f2e43] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f2e44]: 
+          - text: Settings
+        - text:          
+      - listitem [ref=f2e46]:
+        - link " Logout" [ref=f2e47] [cursor=pointer]:
+          - /url: logout.php
+          - generic [ref=f2e48]: 
+          - text: Logout
+    - list
+  - generic [ref=f2e51]:
+    - generic [ref=f2e52]:
+      - list [ref=f2e53]:
+        - listitem [ref=f2e54]:
+          - link "" [ref=f2e55] [cursor=pointer]:
+            - /url: index.php
+        - listitem [ref=f2e57]: / Suppliers
+        - link "" [ref=f2e58] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - generic [ref=f2e61]:
+        - button "" [ref=f2e62] [cursor=pointer]
+        - text:       
+      - generic [ref=f2e66]:
+        - button "" [ref=f2e67] [cursor=pointer]
+        - link "" [ref=f2e69] [cursor=pointer]:
+          - /url: a_supplierssrch.php
+      - button "" [ref=f2e73] [cursor=pointer]
+      - generic [ref=f2e77]:
+        - generic [ref=f2e78] [cursor=pointer]:
+          - radio "en" [checked]
+          - text: en
+        - generic [ref=f2e79] [cursor=pointer]:
+          - radio "id"
+          - text: id
+    - generic [ref=f2e81]:
+      - generic [ref=f2e82]:
+        - generic:
+          - generic [ref=f2e83]:
+            - generic [ref=f2e84]: Page Size
+            - combobox [ref=f2e85]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "5"
+              - option "7"
+              - option "10" [selected]
+              - option "15"
+              - option "20"
+              - option "50"
+              - option "100"
+              - option "500"
+              - option "1000"
+          - generic [ref=f2e86]:
+            - generic [ref=f2e87]: Page
+            - generic [ref=f2e89]:
+              - generic [ref=f2e90]:
+                - generic: 
+                - generic: 
+              - textbox [ref=f2e91]: "1"
+              - generic [ref=f2e92]:
+                - link "" [ref=f2e93] [cursor=pointer]:
+                  - /url: a_supplierslist.php?start=11
+                - link "" [ref=f2e95] [cursor=pointer]:
+                  - /url: a_supplierslist.php?start=881
+            - generic [ref=f2e97]: of 89
+          - generic [ref=f2e98]: Records 1 to 10 of 881
+        - generic [ref=f2e100]:
+          - link "+" [ref=f2e103] [cursor=pointer]:
+            - /url: a_suppliersadd.php?showdetail=
+          - generic [ref=f2e106]:
+            - button "" [ref=f2e107] [cursor=pointer]
+            - text:  
+      - generic [ref=f2e112]:
+        - table [ref=f2e114]:
+          - rowgroup [ref=f2e115]:
+            - row [ref=f2e116]:
+              - cell [ref=f2e117]:
+                - table [ref=f2e118]:
+                  - rowgroup [ref=f2e119]:
+                    - row "Supplier Number Supplier Name Contact Person Phone Number Mobile Number Balance Is Stock Available?" [ref=f2e120]:
+                      - columnheader [ref=f2e121]:
+                        - checkbox [ref=f2e124]
+                      - columnheader [ref=f2e125]
+                      - columnheader [ref=f2e127]
+                      - columnheader [ref=f2e129]
+                      - columnheader [ref=f2e131]
+                      - columnheader "Supplier Number" [ref=f2e133]
+                      - columnheader "Supplier Name" [ref=f2e138]
+                      - columnheader "Contact Person" [ref=f2e143]
+                      - columnheader "Phone Number" [ref=f2e148]
+                      - columnheader "Mobile Number" [ref=f2e153]
+                      - columnheader "Balance" [ref=f2e158]
+                      - columnheader "Is Stock Available?" [ref=f2e163]
+              - cell [ref=f2e168]
+        - table [ref=f2e170]:
+          - rowgroup [ref=f2e171]:
+            - row [ref=f2e172]:
+              - cell [ref=f2e173]:
+                - checkbox [ref=f2e176]
+              - cell "" [ref=f2e177]:
+                - generic [ref=f2e179]:
+                  - generic [ref=f2e180] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e181]:
+                - generic [ref=f2e183]:
+                  - link "Purchase Now" [ref=f2e184] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000001&showdetail=a_purchases_detail
+                  - link "" [ref=f2e186] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=1
+                  - link "" [ref=f2e188] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=1
+                  - link "" [ref=f2e190] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=1
+              - cell [ref=f2e192]:
+                - generic [ref=f2e194]:
+                  - link "Purchases 3" [ref=f2e196] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000001
+                    - text: Purchases
+                    - generic [ref=f2e197]: "3"
+                  - text: 
+              - cell [ref=f2e198]:
+                - generic [ref=f2e200]:
+                  - link "Stock Items 2" [ref=f2e202] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000001
+                    - text: Stock Items
+                    - generic [ref=f2e203]: "2"
+                  - text: 
+              - cell "Supplier-00000000001" [ref=f2e204]
+              - cell "First Supplier" [ref=f2e207]
+              - cell "John Mc. Enroe" [ref=f2e210]
+              - cell "022124415093" [ref=f2e213]
+              - cell "0824132048929" [ref=f2e216]
+              - cell "Rp 16,040,000.00" [ref=f2e219]
+              - cell "Yes" [ref=f2e222]
+            - row [ref=f2e225]:
+              - cell [ref=f2e226]:
+                - checkbox [ref=f2e229]
+              - cell "" [ref=f2e230]:
+                - generic [ref=f2e232]:
+                  - generic [ref=f2e233] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e234]:
+                - generic [ref=f2e236]:
+                  - link "Purchase Now" [ref=f2e237] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000002&showdetail=a_purchases_detail
+                  - link "" [ref=f2e239] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=2
+                  - link "" [ref=f2e241] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=2
+                  - link "" [ref=f2e243] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=2
+              - cell [ref=f2e245]:
+                - generic [ref=f2e247]:
+                  - link "Purchases 2" [ref=f2e249] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000002
+                    - text: Purchases
+                    - generic [ref=f2e250]: "2"
+                  - text: 
+              - cell [ref=f2e251]:
+                - generic [ref=f2e253]:
+                  - link "Stock Items 4" [ref=f2e255] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000002
+                    - text: Stock Items
+                    - generic [ref=f2e256]: "4"
+                  - text: 
+              - cell "Supplier-00000000002" [ref=f2e257]
+              - cell "Second Supplier" [ref=f2e260]
+              - cell "Martina Navatrilova" [ref=f2e263]
+              - cell "02148272080" [ref=f2e266]
+              - cell "081232442840" [ref=f2e269]
+              - cell "Rp 7,750,000.00" [ref=f2e272]
+              - cell "Yes" [ref=f2e275]
+            - row [ref=f2e278]:
+              - cell [ref=f2e279]:
+                - checkbox [ref=f2e282]
+              - cell "" [ref=f2e283]:
+                - generic [ref=f2e285]:
+                  - generic [ref=f2e286] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e287]:
+                - generic [ref=f2e289]:
+                  - link "Purchase Now" [ref=f2e290] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000003&showdetail=a_purchases_detail
+                  - link "" [ref=f2e292] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=3
+                  - link "" [ref=f2e294] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=3
+                  - link "" [ref=f2e296] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=3
+              - cell [ref=f2e298]:
+                - generic [ref=f2e300]:
+                  - link "Purchases 1" [ref=f2e302] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000003
+                    - text: Purchases
+                    - generic [ref=f2e303]: "1"
+                  - text: 
+              - cell [ref=f2e304]:
+                - generic [ref=f2e306]:
+                  - link "Stock Items 3" [ref=f2e308] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000003
+                    - text: Stock Items
+                    - generic [ref=f2e309]: "3"
+                  - text: 
+              - cell "Supplier-00000000003" [ref=f2e310]
+              - cell "Third Supplier" [ref=f2e313]
+              - cell "Joko Sentul" [ref=f2e316]
+              - cell "03142348293" [ref=f2e319]
+              - cell "081242009827" [ref=f2e322]
+              - cell "Rp 3,600,000.00" [ref=f2e325]
+              - cell "Yes" [ref=f2e328]
+            - row [ref=f2e331]:
+              - cell [ref=f2e332]:
+                - checkbox [ref=f2e335]
+              - cell "" [ref=f2e336]:
+                - generic [ref=f2e338]:
+                  - generic [ref=f2e339] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e340]:
+                - generic [ref=f2e342]:
+                  - link "Purchase Now" [ref=f2e343] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000004&showdetail=a_purchases_detail
+                  - link "" [ref=f2e345] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=4
+                  - link "" [ref=f2e347] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=4
+                  - link "" [ref=f2e349] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=4
+              - cell [ref=f2e351]:
+                - generic [ref=f2e353]:
+                  - link "Purchases 1" [ref=f2e355] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000004
+                    - text: Purchases
+                    - generic [ref=f2e356]: "1"
+                  - text: 
+              - cell [ref=f2e357]:
+                - generic [ref=f2e359]:
+                  - link "Stock Items 1" [ref=f2e361] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000004
+                    - text: Stock Items
+                    - generic [ref=f2e362]: "1"
+                  - text: 
+              - cell "Supplier-00000000004" [ref=f2e363]
+              - cell "Fourth Supplier" [ref=f2e366]
+              - cell "Siapa Sajalah" [ref=f2e369]
+              - cell "0213248290" [ref=f2e372]
+              - cell "081242932890" [ref=f2e375]
+              - cell "Rp 1,700,000.00" [ref=f2e378]
+              - cell "Yes" [ref=f2e381]
+            - row [ref=f2e384]:
+              - cell [ref=f2e385]:
+                - checkbox [ref=f2e388]
+              - cell "" [ref=f2e389]:
+                - generic [ref=f2e391]:
+                  - generic [ref=f2e392] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e393]:
+                - generic [ref=f2e395]:
+                  - link "Purchase Now" [ref=f2e396] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000005&showdetail=a_purchases_detail
+                  - link "" [ref=f2e398] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=5
+                  - link "" [ref=f2e400] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=5
+                  - link "" [ref=f2e402] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=5
+              - cell [ref=f2e404]:
+                - generic [ref=f2e406]:
+                  - link "Purchases" [ref=f2e408] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000005
+                  - text: 
+              - cell [ref=f2e409]:
+                - generic [ref=f2e411]:
+                  - link "Stock Items" [ref=f2e413] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000005
+                  - text: 
+              - cell "Supplier-00000000005" [ref=f2e414]
+              - cell "bbcfgb" [ref=f2e417]
+              - cell "bcv" [ref=f2e420]
+              - cell "bcv" [ref=f2e423]
+              - cell "bcv" [ref=f2e426]
+              - cell "Rp 0.00" [ref=f2e429]
+              - cell "No" [ref=f2e432]
+            - row [ref=f2e435]:
+              - cell [ref=f2e436]:
+                - checkbox [ref=f2e439]
+              - cell "" [ref=f2e440]:
+                - generic [ref=f2e442]:
+                  - generic [ref=f2e443] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e444]:
+                - generic [ref=f2e446]:
+                  - link "Purchase Now" [ref=f2e447] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000006&showdetail=a_purchases_detail
+                  - link "" [ref=f2e449] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=6
+                  - link "" [ref=f2e451] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=6
+                  - link "" [ref=f2e453] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=6
+              - cell [ref=f2e455]:
+                - generic [ref=f2e457]:
+                  - link "Purchases" [ref=f2e459] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000006
+                  - text: 
+              - cell [ref=f2e460]:
+                - generic [ref=f2e462]:
+                  - link "Stock Items" [ref=f2e464] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000006
+                  - text: 
+              - cell "Supplier-00000000006" [ref=f2e465]
+              - cell "hfghgf" [ref=f2e468]
+              - cell "hgf" [ref=f2e471]
+              - cell "hgf" [ref=f2e474]
+              - cell "hg" [ref=f2e477]
+              - cell "Rp 0.00" [ref=f2e480]
+              - cell "No" [ref=f2e483]
+            - row [ref=f2e486]:
+              - cell [ref=f2e487]:
+                - checkbox [ref=f2e490]
+              - cell "" [ref=f2e491]:
+                - generic [ref=f2e493]:
+                  - generic [ref=f2e494] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e495]:
+                - generic [ref=f2e497]:
+                  - link "Purchase Now" [ref=f2e498] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000007&showdetail=a_purchases_detail
+                  - link "" [ref=f2e500] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=7
+                  - link "" [ref=f2e502] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=7
+                  - link "" [ref=f2e504] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=7
+              - cell [ref=f2e506]:
+                - generic [ref=f2e508]:
+                  - link "Purchases" [ref=f2e510] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000007
+                  - text: 
+              - cell [ref=f2e511]:
+                - generic [ref=f2e513]:
+                  - link "Stock Items" [ref=f2e515] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000007
+                  - text: 
+              - cell "Supplier-00000000007" [ref=f2e516]
+              - cell "bb" [ref=f2e519]
+              - cell "vxc" [ref=f2e522]
+              - cell "vxc" [ref=f2e525]
+              - cell "vxc" [ref=f2e528]
+              - cell "Rp 0.00" [ref=f2e531]
+              - cell "No" [ref=f2e534]
+            - row [ref=f2e537]:
+              - cell [ref=f2e538]:
+                - checkbox [ref=f2e541]
+              - cell "" [ref=f2e542]:
+                - generic [ref=f2e544]:
+                  - generic [ref=f2e545] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e546]:
+                - generic [ref=f2e548]:
+                  - link "Purchase Now" [ref=f2e549] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000008&showdetail=a_purchases_detail
+                  - link "" [ref=f2e551] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=8
+                  - link "" [ref=f2e553] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=8
+                  - link "" [ref=f2e555] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=8
+              - cell [ref=f2e557]:
+                - generic [ref=f2e559]:
+                  - link "Purchases 1" [ref=f2e561] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000008
+                    - text: Purchases
+                    - generic [ref=f2e562]: "1"
+                  - text: 
+              - cell [ref=f2e563]:
+                - generic [ref=f2e565]:
+                  - link "Stock Items" [ref=f2e567] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000008
+                  - text: 
+              - cell "Supplier-00000000008" [ref=f2e568]
+              - cell "John" [ref=f2e571]
+              - cell "Qedge" [ref=f2e574]
+              - cell "876543" [ref=f2e577]
+              - cell "765432" [ref=f2e580]
+              - cell "Rp 0.00" [ref=f2e583]
+              - cell "No" [ref=f2e586]
+            - row [ref=f2e589]:
+              - cell [ref=f2e590]:
+                - checkbox [ref=f2e593]
+              - cell "" [ref=f2e594]:
+                - generic [ref=f2e596]:
+                  - generic [ref=f2e597] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e598]:
+                - generic [ref=f2e600]:
+                  - link "Purchase Now" [ref=f2e601] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000009&showdetail=a_purchases_detail
+                  - link "" [ref=f2e603] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=9
+                  - link "" [ref=f2e605] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=9
+                  - link "" [ref=f2e607] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=9
+              - cell [ref=f2e609]:
+                - generic [ref=f2e611]:
+                  - link "Purchases" [ref=f2e613] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000009
+                  - text: 
+              - cell [ref=f2e614]:
+                - generic [ref=f2e616]:
+                  - link "Stock Items" [ref=f2e618] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000009
+                  - text: 
+              - cell "Supplier-00000000009" [ref=f2e619]
+              - cell "John" [ref=f2e622]
+              - cell "Qedge" [ref=f2e625]
+              - cell "876543" [ref=f2e628]
+              - cell "765432" [ref=f2e631]
+              - cell "Rp 0.00" [ref=f2e634]
+              - cell "No" [ref=f2e637]
+            - row [ref=f2e640]:
+              - cell [ref=f2e641]:
+                - checkbox [ref=f2e644]
+              - cell "" [ref=f2e645]:
+                - generic [ref=f2e647]:
+                  - generic [ref=f2e648] [cursor=pointer]: 
+                  - text:  
+              - cell [ref=f2e649]:
+                - generic [ref=f2e651]:
+                  - link "Purchase Now" [ref=f2e652] [cursor=pointer]:
+                    - /url: a_purchasesadd.php?Supplier_Number=Supplier-00000000010&showdetail=a_purchases_detail
+                  - link "" [ref=f2e654] [cursor=pointer]:
+                    - /url: a_suppliersview.php?showdetail=&Supplier_ID=10
+                  - link "" [ref=f2e656] [cursor=pointer]:
+                    - /url: a_suppliersedit.php?showdetail=&Supplier_ID=10
+                  - link "" [ref=f2e658] [cursor=pointer]:
+                    - /url: a_suppliersadd.php?showdetail=&Supplier_ID=10
+              - cell [ref=f2e660]:
+                - generic [ref=f2e662]:
+                  - link "Purchases" [ref=f2e664] [cursor=pointer]:
+                    - /url: a_purchaseslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000010
+                  - text: 
+              - cell [ref=f2e665]:
+                - generic [ref=f2e667]:
+                  - link "Stock Items" [ref=f2e669] [cursor=pointer]:
+                    - /url: a_stock_itemslist.php?showmaster=a_suppliers&fk_Supplier_Number=Supplier-00000000010
+                  - text: 
+              - cell "Supplier-00000000010" [ref=f2e670]
+              - cell "John" [ref=f2e673]
+              - cell "Qedge" [ref=f2e676]
+              - cell "876543" [ref=f2e679]
+              - cell "765432" [ref=f2e682]
+              - cell "Rp 0.00" [ref=f2e685]
+              - cell "No" [ref=f2e688]
+          - rowgroup [ref=f2e691]:
+            - row "Rp 29,090,000.00" [ref=f2e692]:
+              - cell [ref=f2e693]
+              - cell [ref=f2e695]
+              - cell [ref=f2e697]
+              - cell [ref=f2e699]
+              - cell [ref=f2e701]
+              - cell [ref=f2e703]
+              - cell [ref=f2e705]
+              - cell [ref=f2e707]
+              - cell [ref=f2e709]
+              - cell [ref=f2e711]
+              - cell "Rp 29,090,000.00" [ref=f2e713]:
+                - generic [ref=f2e715]:
+                  - text: ":"
+                  - generic [ref=f2e716]: Rp 29,090,000.00
+              - cell [ref=f2e717]
+      - generic [ref=f2e719]:
+        - generic:
+          - generic [ref=f2e720]:
+            - generic [ref=f2e721]: Page Size
+            - combobox [ref=f2e722]:
+              - option "1"
+              - option "2"
+              - option "3"
+              - option "5"
+              - option "7"
+              - option "10" [selected]
+              - option "15"
+              - option "20"
+              - option "50"
+              - option "100"
+              - option "500"
+              - option "1000"
+          - generic [ref=f2e723]:
+            - generic [ref=f2e724]: Page
+            - generic [ref=f2e726]:
+              - generic [ref=f2e727]:
+                - generic: 
+                - generic: 
+              - textbox [ref=f2e728]: "1"
+              - generic [ref=f2e729]:
+                - link "" [ref=f2e730] [cursor=pointer]:
+                  - /url: a_supplierslist.php?start=11
+                - link "" [ref=f2e732] [cursor=pointer]:
+                  - /url: a_supplierslist.php?start=881
+            - generic [ref=f2e734]: of 89
+          - generic [ref=f2e735]: Records 1 to 10 of 881
+        - generic [ref=f2e737]:
+          - link "+" [ref=f2e740] [cursor=pointer]:
+            - /url: a_suppliersadd.php?showdetail=
+          - generic [ref=f2e743]:
+            - button "" [ref=f2e744] [cursor=pointer]
+            - text:  
+  - generic [ref=f2e749]:
+    - text: ©2015
+    - link "Masino Sinaga" [ref=f2e750] [cursor=pointer]:
+      - /url: http://www.ilovephpmaker.com
+    - text: . All rights reserved. |
+    - link "Terms and Conditions" [ref=f2e751] [cursor=pointer]:
+      - /url: javascript:void(0);
+    - text: "|"
+    - link "About Us" [ref=f2e752] [cursor=pointer]:
+      - /url: javascript:void(0);
+    - text: "|"
+    - link "Back to Top" [ref=f2e753] [cursor=pointer]:
+      - /url: javascript:void(0);
+    - generic [ref=f2e754]: Your session will expire in 129 seconds.
+```
+
+# Test source
+
+```ts
+  1  | import { test as base, expect } from "@playwright/test";
+  2  | import { AdminLoginPage } from "../Pages/AdminLoginPage";
+  3  | import { adminLogOut } from "../Pages/AdminLogout";
+  4  | 
+  5  | export const test = base;
+  6  | 
+  7  | test.beforeEach(async ({ page }) => {
+  8  |     const loginPage = new AdminLoginPage(page);
+  9  |     const baseUrl = process.env.BASE_URL;
+  10 |     const username = process.env.BASE_USER;
+  11 |     const password = process.env.BASE_PASS;
+  12 | 
+  13 |     if (!baseUrl) {
+  14 |         throw new Error("BASE_URL environment variable is not set");
+  15 |     }
+  16 |     if (!username || !password) {
+  17 |         throw new Error("BASE_USER and BASE_PASS environment variables are not set");
+  18 |     }
+  19 | 
+  20 |     await loginPage.launchUrl(baseUrl);
+  21 |     await loginPage.ERPLogin(username, password);
+  22 | });
+  23 | 
+> 24 | test.afterEach(async ({ page }) => {
+     |      ^ Test timeout of 30000ms exceeded while running "afterEach" hook.
+  25 |     const logoutPage = new adminLogOut(page);
+  26 |     await logoutPage.ERPlogout();
+  27 | });
+  28 | 
+  29 | export { expect };
+  30 | 
+```

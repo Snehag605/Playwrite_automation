@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","6181","suplier with single data","firefox","2026-09-19","failed","2026-09-19","ERP Inventory Manage","ERPSingleData.spec.ts","",""
+"","14942","suplier with single data","webkit","2026-09-19","failed","2026-09-19","ERP Inventory Manage","ERPSingleData.spec.ts","",""
+"","14420","suplier with single data","chromium","2026-09-20","passed","2026-09-20","ERP Inventory Manage","ERPSingleData.spec.ts","",""
+"","13189","customer module","chromium","2026-09-20","passed","2026-09-20","ERP Inventory Manage","ERPSingleData.spec.ts","",""
